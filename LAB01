@@ -1,0 +1,254 @@
+%drzewo genealogiczne
+
+
+%baza zaleznosci
+%rodzina szczygielskich
+%dziadkowie szczygielscy
+
+rodzic(wieslawa,iwona).
+rodzic(wieslawa,danuta).
+rodzic(wieslawa,jolanta).
+rodzic(wieslawa,renata).
+rodzic(wieslawa,marek2).
+
+rodzic(kazimierz,iwona).
+rodzic(kazimierz,danuta).
+rodzic(kazimierz,jolanta).
+rodzic(kazimierz,renata).
+rodzic(kazimierz,marek2).
+
+%rodzina iwony i marka
+rodzic(iwona,michal).
+rodzic(iwona,pawel).
+
+rodzic(marek,michal).
+rodzic(marek,pawel).
+
+%rodzina pawla i natalii
+rodzic(natalia,franciszek).
+
+rodzic(pawel,franciszek).
+
+%rodzina danuty i tadeusza
+rodzic(danuta,edyta).
+rodzic(danuta,aneta).
+rodzic(danuta,joanna).
+
+rodzic(tadeusz,edyta).
+rodzic(tadeusz,aneta).
+rodzic(tadeusz,joanna).
+
+%rodzina edyty i tomasza
+rodzic(edyta,jan).
+
+rodzic(tomasz,jan).
+
+%rodzina anety i roberta
+rodzic(aneta,aleksandra).
+rodzic(aneta,anna).
+
+rodzic(robert,aleksandra).
+rodzic(robert,anna).
+
+%rodzina joanny i roberta
+rodzic(joanna,nikodem).
+rodzic(joanna,kajetan).
+
+rodzic(robert2,nikodem).
+rodzic(robert2,kajetan).
+
+%rodzina jolanty i wojciecha
+rodzic(jolanta,tomasz2).
+
+rodzic(wojciech,tomasz2).
+
+%rodzina renaty i mieczyslawa
+rodzic(renata,weronika).
+
+rodzic(mieczyslaw,weronika).
+
+%rodzina marka i beaty
+rodzic(beata,judyta).
+rodzic(beata,igor).
+
+rodzic(marek2,judyta).
+rodzic(marek2,igor).
+
+
+%rodzina biernackich
+%dziadkowie biernaccy
+
+rodzic(barbara,marek).
+rodzic(barbara,andrzej).
+rodzic(barbara,robert3).
+rodzic(barbara,malgorzata).
+
+rodzic(waclaw,marek).
+rodzic(waclaw,andrzej).
+rodzic(waclaw,robert3).
+rodzic(waclaw,malgorzata).
+
+%rodzina marii i andrzeja
+rodzic(maria,konrad).
+rodzic(maria,karol).
+rodzic(maria,piotr).
+
+rodzic(andrzej,konrad).
+rodzic(andrzej,karol).
+rodzic(andrzej,piotr).
+
+%rodzina moniki i konrada
+rodzic(monika,wiktoria).
+rodzic(monika,dominika).
+
+rodzic(konrad,wikoria).
+rodzic(konrad,dominika).
+
+%rodzina justyna i karola
+rodzic(justyna,kacper).
+
+rodzic(karol,kacper).
+
+%rodzina malgorzaty i michala
+rodzic(malgorzata,szymon).
+
+rodzic(michal2,szymon).
+
+
+%baza danych szczegolowych
+kobieta(wieslawa).
+kobieta(iwona).
+kobieta(danuta).
+kobieta(jolanta).
+kobieta(renata).
+kobieta(natalia).
+kobieta(edyta).
+kobieta(aneta).
+kobieta(joanna).
+kobieta(aleksandra).
+kobieta(anna).
+kobieta(weronika).
+kobieta(beata).
+kobieta(judyta).
+kobieta(barbara).
+kobieta(malgorzata).
+
+mezczyzna(kazimierz).
+mezczyzna(marek2).
+mezczyzna(michal).
+mezczyzna(pawel).
+mezczyzna(marek).
+mezczyzna(franiciszek).
+mezczyzna(tadeusz).
+mezczyzna(tomasz).
+mezczyzna(jan).
+mezczyzna(robert).
+mezczyzna(robert2).
+mezczyzna(nikodem).
+mezczyzna(kajetan).
+mezczyzna(wojciech).
+mezczyzna(tomasz2).
+mezczyzna(mieczyslaw).
+mezczyzna(igor).
+mezczyzna(waclaw).
+mezczyzna(robert3).
+mezczyzna(andrzej).
+mezczyzna(konrad).
+mezczyzna(karol).
+mezczyzna(wiktor).
+mezczyzna(piotr).
+mezczyzna(michal2).
+mezczyzna(szymon).
+
+%nazwiska
+nazwisko(jezierska,wieslawa).
+nazwisko(szczygielska,wieslawa).
+nazwisko(szczygielski,kazimierz).
+nazwisko(szczygielska,iwona).
+nazwisko(biernacka,iwona).
+nazwisko(biernacki,marek).
+nazwisko(biernacki,pawel).
+nazwisko(gajowa,natalia).
+nazwisko(biernacka,natalia).
+nazwisko(biernacki,franciszek).
+nazwisko(biernacki,michal).
+nazwisko(szczygielska,danuta).
+nazwisko(szczygielska,jolanta).
+nazwisko(szczygielska,renata).
+nazwisko(szczygielski,marek2).
+nazwisko(sosnowska,beata).
+nazwisko(szczygielska,beata).
+nazwisko(szczygielska,judyta).
+nazwisko(szczygielski,igor).
+nazwisko(muszynska,danuta).
+nazwisko(muszynki,tadeusz).
+nazwisko(makaruk,jolanta).
+nazwisko(makaruk,wojciech).
+nazwisko(makaruk,tomasz2).
+nazwisko(gajowa,renata).
+nazwisko(gajowy,mieczyslaw).
+nazwisko(gajowa,weronika).
+nazwisko(muszynska,edyta).
+nazwisko(zaremba,tomasz).
+nazwisko(zaremba,jan).
+nazwisko(muszynska,joanna).
+nazwisko(wakula,joanna).
+nazwisko(wakula,robert2).
+nazwisko(wakula,nikodem).
+nazwisko(wakula,kajetan).
+nazwisko(muszynska,aneta).
+nazwisko(kezik,aneta).
+nazwisko(kezik,robert).
+nazwisko(kezik,aleksandra).
+nazwisko(kezik,anna).
+nazwisko(biernacki,waclaw).
+nazwisko(biernacka,barbara).
+
+
+%relacje
+
+
+syn(X,Y) :-
+    mezczyzna(Y),
+    rodzic(X,Y).
+
+corka(X,Y) :-
+    kobieta(Y),
+    rodzic(X,Y).
+
+matka(X,Y) :-
+    kobieta(X),
+    rodzic(X,Y).
+
+ojciec(X,Y) :-
+    mezczyzna(X),
+    rodzic(X,Y).
+
+babcia(Z,Y) :-
+    rodzic(X,Y),
+    kobieta(Z),
+    rodzic(Z,X).
+
+dziadek(Z,Y) :-
+    rodzic(X,Y),
+    rodzic(Z,X),
+    mezczyzna(Z).
+
+nazwisko_matki(Z,Y) :-
+    rodzic(X,Y),
+    kobieta(X),
+    nazwisko(Z,X).
+
+nazwisko_ojca(Z,Y) :-
+    rodzic(X,Y),
+    mezczyzna(X),
+    nazwisko(Z,X).
+
+nazwisko_babci(N,Y) :-
+    rodzic(X,Y),
+    rodzic(Z,X),
+    kobieta(Z),
+    nazwisko(N,Z).
+
+
+
