@@ -205,50 +205,229 @@ nazwisko(biernacki,waclaw).
 nazwisko(biernacka,barbara).
 
 
+zawod(kierowca_karetki,kazimierz).
+zawod(praczka,wieslawa).
+zawod(manager,tadeusz).
+zawod(pielegniarka,danuta).
+zawod(sportowiec,tomasz).
+zawod(sportowiec,edyta).
+zawod(uczen,jan).
+zawod(handlarz,robert2).
+zawod(handlarz,joanna).
+zawod(uczen,nikodem).
+zawod(-,kajetan).
+zawod(handlarz,robert).
+zawod(handlarz,aneta).
+zawod(uczen,aleksandra).
+zawod(uczen,anna).
+zawod(marynarz,wojciech).
+zawod(urzednik,jolanta).
+zawod(marynarz,tomasz2).
+zawod(stolarz,mieczyslaw).
+zawod(stolarz,renata).
+zawod(student,weronika).
+zawod(kierowca_tira,marek2).
+zawod(kierowca_tira,beata).
+zawod(uczen,judyta).
+zawod(uczen,igor).
+zawod(weterynarz,waclaw).
+zawod(guwernantka,barbara).
+zawod(spawacz,marek).
+zawod(pielegniarka,iwona).
+zawod(przedstawiciel_handlowy,pawel).
+zawod(spedytor,natalia).
+zawod(informatyk,michal).
+zawod(uczen,franciszek).
+zawod(policjant,andrzej).
+zawod(pielegniarka,maria).
+zawod(strazak,karol).
+zawod(strazak,justyna).
+zawod(uczen,kacper).
+zawod(programista,konrad).
+zawod(programista,monika).
+zawod(uczen,dominika).
+zawod(uczen,wiktoria).
+zawod(krytyk_filmowy,piotr).
+zawod(ksiadz,robert3).
+zawod(policjant,michal2).
+zawod(pielegniarka,malgorzata).
+zawod(uczen,szymon).
+
+cecha_szczegolna(powazny,kazimierz).
+cecha_szczegolna(pelna_energi,wieslawa).
+cecha_szczegolna(powazny,tadeusz).
+cecha_szczegolna(przemadrzala,danuta).
+cecha_szczegolna(silny,tomasz).
+cecha_szczegolna(szybka,edyta).
+cecha_szczegolna(zabawny,jan).
+cecha_szczegolna(glowa_do_interesow,robert2).
+cecha_szczegolna(glowa_do_interesow,joanna).
+cecha_szczegolna(pelny_energii,nikodem).
+cecha_szczegolna(glowa_do_interesow,robert).
+cecha_szczegolna(rozesmiana,aneta).
+cecha_szczegolna(nowoczesna,aleksandra).
+cecha_szczegolna(rozesmiana,anna).
+cecha_szczegolna(silny_charakter,wojciech).
+cecha_szczegolna(rozesmiana,jolanta).
+cecha_szczegolna(obeizyswiat,tomasz2).
+cecha_szczegolna(glowa_do_interesow,mieczyslaw).
+cecha_szczegolna(glowa_do_interesow,renata).
+cecha_szczegolna(imprezowiczka,weronika).
+cecha_szczegolna(sprytny,marek2).
+cecha_szczegolna(zaradna,beata).
+cecha_szczegolna(wszedzie_jej_pelno,judyta).
+cecha_szczegolna(pilkarz,igor).
+cecha_szczegolna(burzliwy,waclaw).
+cecha_szczegolna(opanowany,marek).
+cecha_szczegolna(choleryczka,iwona).
+cecha_szczegolna(sprytny,pawel).
+cecha_szczegolna(zaradna,natalia).
+cecha_szczegolna(wszedzie_go_pelno,franciszek).
+cecha_szczegolna(stanowczy,andrzej).
+cecha_szczegolna(opiekuncza,maria).
+cecha_szczegolna(odwazny,karol).
+cecha_szczegolna(mila,justyna).
+cecha_szczegolna(wszedzie_go_pelno,kacper).
+cecha_szczegolna(madry,konrad).
+cecha_szczegolna(mila,monika).
+cecha_szczegolna(dzidzius,dominika).
+cecha_szczegolna(dzidzius,wiktoria).
+cecha_szczegolna(spokojny,piotr).
+cecha_szczegolna(spokojny,robert3).
+cecha_szczegolna(porywczy,michal2).
+cecha_szczegolna(spokojna,malgorzata).
+cecha_szczegolna(wszedzi_go_pelno,szymon).
+
+
+
+
+
 %relacje
 
+maz(M,Y) :-
+    rodzic(Y,X),
+    rodzic(M,X),
+    mezczyzna(M).
+
+zona(M,Y) :-
+    rodzic(Y,X),
+    rodzic(M,X),
+    kobieta(M).
+
+brat(Z,Y) :-
+    rodzic(X,Y),
+    rodzic(X,Z),
+    Z\=Y,
+    mezczyzna(Z).
+
+siostra(Z,Y) :-
+    rodzic(X,Y),
+    rodzic(X,Z),
+    Z\=Y,
+    kobieta(Z).
 
 syn(X,Y) :-
-    mezczyzna(Y),
-    rodzic(X,Y).
+    rodzic(X,Y),
+    mezczyzna(Y).
 
 corka(X,Y) :-
-    kobieta(Y),
-    rodzic(X,Y).
+    rodzic(X,Y),
+    kobieta(Y).
 
 matka(X,Y) :-
-    kobieta(X),
-    rodzic(X,Y).
+    rodzic(X,Y),
+    kobieta(X).
 
 ojciec(X,Y) :-
-    mezczyzna(X),
-    rodzic(X,Y).
+    rodzic(X,Y),
+    mezczyzna(X).
 
 babcia(Z,Y) :-
     rodzic(X,Y),
-    kobieta(Z),
-    rodzic(Z,X).
+    rodzic(Z,X),
+    kobieta(Z).
 
 dziadek(Z,Y) :-
     rodzic(X,Y),
     rodzic(Z,X),
     mezczyzna(Z).
 
-nazwisko_matki(Z,Y) :-
+wujek(Z,Y) :-
     rodzic(X,Y),
-    kobieta(X),
+    brat(Z,X).
+
+ciocia(Z,Y) :-
+    rodzic(X,Y),
+    siostra(Z,X).
+
+nazwisko_matki(Z,Y) :-
+    matka(X,Y),
     nazwisko(Z,X).
 
 nazwisko_ojca(Z,Y) :-
-    rodzic(X,Y),
-    mezczyzna(X),
+    ojciec(X,Y),
     nazwisko(Z,X).
 
 nazwisko_babci(N,Y) :-
-    rodzic(X,Y),
-    rodzic(Z,X),
-    kobieta(Z),
-    nazwisko(N,Z).
+    babcia(X,Y),
+    nazwisko(N,X).
 
+nazwisko_dziadka(N,Y) :-
+    dziadek(X,Y),
+    nazwisko(N,X).
 
+nazwisko_mamy(N,Y) :-
+    matka(X,Y),
+    nazwisko(N,X).
 
+nazwisko_taty(N,Y) :-
+    ojciec(X,Y),
+    nazwisko(N,X).
+
+zawod_matki(Z,Y) :-
+    matka(X,Y),
+    zawod(Z,X).
+
+zawod_ojca(Z,Y) :-
+    ojciec(X,Y),
+    zawod(Z,X).
+
+zawod_babci(Z,Y) :-
+    babcia(R,Y),
+    zawod(Z,R).
+
+zawod_dziadka(Z,Y) :-
+    dziadek(R,Y),
+    zawod(Z,R).
+
+zawod_brata(Z,Y) :-
+    brat(X,Y),
+    zawod(Z,X).
+
+zawod_siostry(Z,Y) :-
+    siostra(X,Y),
+    zawod(Z,X).
+
+cecha_brata(C,Y) :-
+    brat(X,Y),
+    cecha_szczegolna(C,X).
+
+cecha_siostry(C,Y) :-
+    siostra(X,Y),
+    cecha_szczegolna(C,X).
+
+cecha_ojca(C,Y) :-
+    ojciec(X,Y),
+    cecha_szczegolna(C,X).
+
+cecha_matki(C,Y) :-
+    matka(X,Y),
+    cecha_szczegolna(C,X).
+
+cecha_babci(C,Y) :-
+    babcia(X,Y),
+    cecha_szczegolna(C,X).
+
+cecha_dziadka(C,Y) :-
+    dziadek(X,Y),
+    cecha_szczegolna(C,X).
