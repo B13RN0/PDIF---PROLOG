@@ -203,6 +203,21 @@ nazwisko(kezik,aleksandra).
 nazwisko(kezik,anna).
 nazwisko(biernacki,waclaw).
 nazwisko(biernacka,barbara).
+nazwisko(biernacki,andrzej).
+nazwisko(biernacka,maria).
+nazwisko(biernacki,konrad).
+nazwisko(biernacka,monika).
+nazwisko(biernacka,dominika).
+nazwisko(biernacka,wiktoria).
+nazwisko(biernacki,karol).
+nazwisko(biernacka,justyna).
+nazwisko(biernacki,kacper).
+nazwisko(biernacki,piotr).
+nazwisko(biernacki,robert3).
+nazwisko(biernacka,malgorzata).
+nazwisko(ciolek,malgorzata).
+nazwisko(ciolek,michal2).
+nazwisko(ciolek,szymon).
 
 
 zawod(kierowca_karetki,kazimierz).
@@ -217,7 +232,7 @@ zawod(handlarz,joanna).
 zawod(uczen,nikodem).
 zawod(-,kajetan).
 zawod(handlarz,robert).
-zawod(handlarz,aneta).
+zawod(farmaceutka,aneta).
 zawod(uczen,aleksandra).
 zawod(uczen,anna).
 zawod(marynarz,wojciech).
@@ -283,6 +298,7 @@ cecha_szczegolna(choleryczka,iwona).
 cecha_szczegolna(sprytny,pawel).
 cecha_szczegolna(zaradna,natalia).
 cecha_szczegolna(wszedzie_go_pelno,franciszek).
+cecha_szczegolna(slaby_z_javy,michal).
 cecha_szczegolna(stanowczy,andrzej).
 cecha_szczegolna(opiekuncza,maria).
 cecha_szczegolna(odwazny,karol).
